@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import AuthContext from "../Context/AuthContext";
@@ -16,19 +16,21 @@ const loginSchema = Yup.object().shape({
 });
 
 const LoginForm = () => {
+  const [rememberMe, setRememberMe] = useState(false);
+
   const { user, login } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   const handleSubmit = ({ name, password }) => {
-    login(name, password);
+    login(name, password, rememberMe);
   };
 
   useEffect(() => {
     if (user) {
       navigate("/dashboard");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <>
@@ -76,6 +78,8 @@ const LoginForm = () => {
                     Remember Me
                   </label>
                   <input
+                    checked={rememberMe}
+                    onClick={() => setRememberMe(!rememberMe)}
                     className="form-check-input"
                     type="radio"
                     name="flexRadioDefault"

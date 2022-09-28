@@ -6,10 +6,12 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [Error, setError] = useState(null);
 
-  const login = (name, password) => {
+  const login = (name, password, rememberMe) => {
     if (name === "avinash" && password === "12345678") {
       console.log(name, password);
-      localStorage.setItem("CurrentUser-", name);
+      if (rememberMe) {
+        localStorage.setItem("CurrentUser-", name);
+      }
       setUser(name);
     } else {
       if (name !== "avinash") {
