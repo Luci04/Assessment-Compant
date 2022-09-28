@@ -16,7 +16,7 @@ const loginSchema = Yup.object().shape({
 });
 
 const LoginForm = () => {
-  const { user, login, Error } = useContext(AuthContext);
+  const { user, login } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
