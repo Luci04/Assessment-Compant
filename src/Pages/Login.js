@@ -79,6 +79,8 @@ const LoginForm = () => {
                     />
                   </div>
                 </div>
+                <input type="checkbox" value="lsRememberMe" id="rememberMe" />{" "}
+                <label for="rememberMe">Remember me</label>
                 <div>{Error}</div>
                 <Button type="submit" style={{ margin: "20px" }}>
                   Login
