@@ -8,7 +8,7 @@ function Navi({ user, FetchJokes, Logout }) {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">{user}</Navbar.Brand>
+        <Navbar.Brand>{user}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

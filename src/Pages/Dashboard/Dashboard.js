@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import Navi from "./Navbar";
-import CardsSection from "./CardsSection";
+import Navi from "../../Components/Navbar";
+import CardsSection from "../CardsSection";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import AuthContext from "../../Context/AuthContext";
 import "./loading.css";
-import AuthContext from "../Context/AuthContext";
 
 function Dashboard() {
   const { user, logout } = useContext(AuthContext);
@@ -41,16 +41,7 @@ function Dashboard() {
     <div>
       <Navi user={user} FetchJokes={FetchJokes} Logout={Logout} />
       {loading === true ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100vw",
-            height: "90vh",
-            overflow: "hidden",
-          }}
-        >
+        <div className="Loader-container">
           <div className="spinner-box">
             <div className="circle-border">
               <div className="circle-core"></div>

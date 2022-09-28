@@ -1,3 +1,12 @@
+.Loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+}
+
 .spinner-box {
   width: 300px;
   height: 300px;
